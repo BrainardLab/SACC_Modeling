@@ -1,7 +1,7 @@
-function SpatioSpectralStimulatorLocalHook
-% ForcedChoiceCMLocalHook
+function SACC_ModelingLocalHook
+% SACC_Modeling
 %
-% Configure things for working on the SpatioSpectralStimulator project.
+% Configure things for working on the SACC_Modeling project.
 %
 % For use with the ToolboxToolbox.  If you copy this into your
 % ToolboxToolbox localToolboxHooks directory (by default,
@@ -13,7 +13,7 @@ function SpatioSpectralStimulatorLocalHook
 % to match what is true on your computer.
 
 %% Define project
-projectName = 'SpatioSpectralStimulator';
+projectName = 'SACC_Modeling';
 
 %% Say hello
 fprintf('Running %s local hook\n',projectName);
@@ -66,9 +66,6 @@ setpref(projectName,'TestDataFolder',fullfile(baseDir,'SACC_datadev','TestData')
 % Main experiment data dir (as of 10/14/22)
 setpref(projectName,'SACCData',fullfile(baseDir,'SACC_data'));
 
-% Experiment analysis data dir (as of 10/19/22)
-setpref(projectName,'SACCAnalysis',fullfile(baseDir,'SACC_analysis'));
-
 % Check data dir (This is for screen stability and channel additivity data)
 setpref(projectName,'CheckDataFolder',fullfile(baseDir,'SACC_materials','JandJProjector','CheckData'));
 
@@ -78,24 +75,10 @@ setpref(projectName,'SACCMaterials',fullfile(baseDir,'SACC_materials'));
 % David's melanopsion work
 setpref(projectName,'SACCMelanopsin',fullfile(baseDir,'SACC_melanopsin'));
 
-% New experiment analysis data dir (as of 10/03/23).
-setpref(projectName,'SACCAnalysisRefit',fullfile(baseDir,'SACC_analysis_refit'));
-
 % We will save the final results in this directory (as of 10/13/23).
 setpref(projectName,'SACCAnalysisFinal',fullfile(baseDir,'SACC_analysis_final'));
 
-%% Set preferences for project output
-%
-% This will need to be locally configured.
-% setpref(projectName,'simulatedDataDir',fullfile(projectBaseDir,'SimulatedData'));
-% setpref(projectName,'rayleighDataDir',fullfile(baseDir,'MELA_data','Experiments',projectName,'OLRayleighMatch'));
-% setpref(projectName,'rayleighAnalysisDir',fullfile(baseDir,'MELA_analysis','Experiments',projectName, 'OLRayleighMatch'));
-% setpref(projectName,'mainExpDir',projectBaseDir);
-% setpref(projectName,'analysisDir',fullfile(baseDir,'CNST_analysis',projectName));
-% setpref(projectName,'stimulusFolder',fullfile(baseDir,'CNST_materials',projectName,'E3'));
-% setpref(projectName,'dataFolder',fullfile(baseDir,'CNST_data',projectName));
-% setpref(projectName,'demoDataDir',fullfile(baseDir,'CNST_analysis',projectName,'DemoData'));
-% setpref(projectName,'mainCodeDir',fullfile('/Users/', sysInfo.userShortName, 'Documents/MATLAB/projects/Experiments/ColorMaterial/code'));
-% setpref(projectName,'calFileName','ColorMaterialCalibration');
-% setpref('OneLightToolbox', 'OneLightCalData',fullfile(baseDir,'MELA_materials','Experiments',projectName,'OneLightCalData'));
-% setpref('BrainardLabToolbox','CalDataFolder',fullfile(baseDir,'MELA_materials','Experiments',projectName,'OneLightCalData'));
+% Modleing output etc. dir
+setpref(projectName('SACCModeling'),fullfile(baseDir,'SACC_modeling'));
+
+
