@@ -55,30 +55,22 @@ switch (sysInfo.localHostName)
 end
 
 %% Project prefs
-setpref(projectName,'LEDSpectraDir',fullfile(baseDir,'SACC_materials','JandJProjector','LEDSpectrumMeasurements'));
+setpref(projectName,'LEDSpectraDir',fullfile(baseDir,'SCMD_materials','JandJProjector','LEDSpectrumMeasurements'));
 
 % Calibration
-setpref('BrainardLabToolbox','CalDataFolder',fullfile(baseDir,'SACC_materials','Calibration'));
-
-% Data dir
-setpref(projectName,'TestDataFolder',fullfile(baseDir,'SACC_datadev','TestData'));
+setpref('BrainardLabToolbox','CalDataFolder',fullfile(baseDir,'SCMD_materials','Calibration'));
 
 % Main experiment data dir (as of 10/14/22)
-setpref(projectName,'SACCData',fullfile(baseDir,'SACC_data'));
+setpref(projectName,'SCMDData',fullfile(baseDir,'SCMD_data'));
 
 % Check data dir (This is for screen stability and channel additivity data)
-setpref(projectName,'CheckDataFolder',fullfile(baseDir,'SACC_materials','JandJProjector','CheckData'));
+setpref(projectName,'CheckDataFolder',fullfile(baseDir,'SCMD_materials','JandJProjector','CheckData'));
 
-% SACC materials.
-setpref(projectName,'SACCMaterials',fullfile(baseDir,'SACC_materials'));
-
-% David's melanopsion work
-setpref(projectName,'SACCMelanopsin',fullfile(baseDir,'SACC_melanopsin'));
+% SCMD materials.
+setpref(projectName,'SCMDMaterials',fullfile(baseDir,'SCMD_materials'));
 
 % We will save the final results in this directory (as of 10/13/23).
-setpref(projectName,'SACCAnalysisFinal',fullfile(baseDir,'SACC_analysis_final'));
+setpref(projectName,'SCMDAnalysis',fullfile(baseDir,'SCMD_analysis'));
 
-% Modleing output etc. dir
-setpref(projectName('SACCModeling'),fullfile(baseDir,'SACC_modeling'));
 
 

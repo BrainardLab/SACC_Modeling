@@ -13,8 +13,8 @@ clear; close all;
 filterOptions = {'A', 'B', 'C', 'D', 'E'};
 
 %% Load the test image spectra.
-if (ispref('SpatioSpectralStimulator','SACCData'))
-    testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+if (ispref('SpatioSpectralStimulator','SCMDData'))
+    testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
     testFiledir = fullfile(testFiledir,'CheckCalibration');
     testFilename = GetMostRecentFileName(testFiledir,'testImageDataCheck');
     spdTestData = load(testFilename);
@@ -51,8 +51,8 @@ legend('Background', sprintf('Red (Image Contrast = %.2f)', testContrasts(idxMax
     sprintf('Green (Image Contrast = %.2f)', testContrasts(idxMinContrast)),'fontsize',12);
 
 %% Load the filter data.
-if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-    testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+    testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
     testFiledir = fullfile(testFiledir,'Filters');
     testFilename = fullfile(testFiledir,'GoggleSpectraSummary_UPenn.xlsx');
     spdFilters = readtable(testFilename,'sheet','SPD');

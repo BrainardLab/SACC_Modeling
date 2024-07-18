@@ -9,7 +9,7 @@
 clear; close all; 
 
 %% Load image.
-fileDir = '~/Aguirre-Brainard Lab Dropbox/Semin Oh/SACC_materials/Camera/091622_Check_Chromatic_Abberration';
+fileDir = '~/Aguirre-Brainard Lab Dropbox/Fangfang Hong/SCMD_materials/Camera/091622_Check_Chromatic_Abberration';
 cd(fileDir);
 
 numChannel = 13;

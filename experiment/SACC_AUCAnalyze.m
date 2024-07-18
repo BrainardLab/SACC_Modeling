@@ -27,7 +27,7 @@ imgFileFormat = '.tiff';
 % from the original analysis folder 'SACC_analysis'.
 FITPFONLYGOODTESTCONTRASTS = true;
 if (FITPFONLYGOODTESTCONTRASTS)
-    whichPref = 'SACCAnalysisFinal';
+    whichPref = 'SCMDAnalysis';
 else
     whichPref = 'SACCAnalysis';
 end

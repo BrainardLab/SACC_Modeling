@@ -16,8 +16,8 @@ nSineFreqCyclesPerDeg = numel(sineFreqCyclesPerDeg);
 for ss = 1:nSineFreqCyclesPerDeg
     sineFreqCyclesPerDegTemp = sineFreqCyclesPerDeg(ss);
     
-    if (ispref('SpatioSpectralStimulator','SACCData'))
-        testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),'TestImages');
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
+        testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),'TestImages');
         testFilename = GetMostRecentFileName(testFiledir,...
             sprintf('RunExpData_%d_cpd',sineFreqCyclesPerDegTemp),'olderDate',olderDate);
         theData{ss} = load(testFilename);
@@ -46,8 +46,8 @@ nSineFreqCyclesPerDeg = numel(sineFreqCyclesPerDeg);
 for ss = 1:nSineFreqCyclesPerDeg
     sineFreqCyclesPerDegTemp = sineFreqCyclesPerDeg(ss);
     
-    if (ispref('SpatioSpectralStimulator','SACCData'))
-        testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),'TestImages');
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
+        testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),'TestImages');
         testFilename = GetMostRecentFileName(testFiledir,...
             sprintf('RunExpData_high_%d_cpd',sineFreqCyclesPerDegTemp),'olderDate',olderDate);
         theData{ss} = load(testFilename);

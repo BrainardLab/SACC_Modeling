@@ -19,8 +19,8 @@ testChannel = 'Ch7';
 digitalInputOptions = [0.1:0.1:1.0];
 nImages = length(digitalInputOptions);
 for ee = 1:nImages
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         testFiledir = fullfile(testFiledir,'Camera','CameraGammaFunction',testChannel);
         digitalInputTemp = digitalInputOptions(ee);
         testFilename = GetMostRecentFileName(testFiledir, sprintf('%s_%.1f%s',testChannel,digitalInputTemp,'crop'));

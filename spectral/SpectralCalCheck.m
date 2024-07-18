@@ -24,8 +24,8 @@ MEASUREPRIMARY = false;
 %% Load output of SpectralCalCompute.
 conditionName = 'LminusMSmooth';
 
-if (ispref('SpatioSpectralStimulator','SACCData'))
-    testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+if (ispref('SpatioSpectralStimulator','SCMDData'))
+    testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
     testFilename = GetMostRecentFileName(fullfile(testFiledir,'CheckCalibration'),...
         'testImageData');
     theData = load(testFilename);
@@ -78,7 +78,7 @@ if (MEASUREPRIMARY)
     
      % Load the measurement results.
 elseif (~MEASUREPRIMARY)
-    if (ispref('SpatioSpectralStimulator','SACCData'))
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
         olderDatePrimary = 0;
         
         % Load different file name according to 'normal' set or 'high' test
@@ -96,7 +96,7 @@ elseif (~MEASUREPRIMARY)
                 filenamePart = 'targetScreenSpdMeasured_high';
         end
         
-        testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
         primaryFilename = GetMostRecentFileName(fullfile(testFiledir,'TestImages','MeasurementData'),...
             filenamePart,'olderDate',olderDatePrimary);
         load(primaryFilename); 
@@ -303,8 +303,8 @@ if (MEASURETARGETCONTRAST)
     
     % Save data with the name containing dayTimestr, so that we can
     % automatically load in the most recent output.
-    if (ispref('SpatioSpectralStimulator','SACCData'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
         dayTimestr = datestr(now,'yyyy-mm-dd_HH-MM-SS');
         testFilename = fullfile(testFiledir,'CheckCalibration',sprintf('testImageDataCheck_%s',dayTimestr));
         save(testFilename,'theData','targetScreenSpd','targetScreenSpdMeasured','screenCalObj', ...

@@ -30,8 +30,8 @@ imageType = 'normal';
 imageSpatialFrequency = 18;
 
 % Load the test image data here.
-if (ispref('SpatioSpectralStimulator','SACCData'))
-    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),'TestImages');
+if (ispref('SpatioSpectralStimulator','SCMDData'))
+    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),'TestImages');
     % We set the test file name differently over the image type either
     % 'normal' or 'high'.
     olderDate = 0;
@@ -77,8 +77,8 @@ imageBgSettings = imageTestSettingsCal(:,1);
 %
 % Here we load the validation data which contains the measured primaries
 % info so that we can calculate the predicted contrasts of the settings.
-if (ispref('SpatioSpectralStimulator','SACCData'))
-    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),'CheckCalibration');
+if (ispref('SpatioSpectralStimulator','SCMDData'))
+    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),'CheckCalibration');
     
     % We make a loop here to find the file that matches the date of the
     % experiment. The date of the experiment is in 'dateStrExp' and we will

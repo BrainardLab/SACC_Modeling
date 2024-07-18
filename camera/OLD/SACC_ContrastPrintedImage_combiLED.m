@@ -20,7 +20,7 @@ focusedImage = false;
 PLOTSPECTRA = false;
 measureDateSPD = '0829';
 
-testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'Camera','ChromaticAberration');
 testFilename = 'spd_combiLED.mat';
 spdData = load(fullfile(testFiledir,testFilename));
@@ -56,7 +56,7 @@ if (PLOTSPECTRA)
 end
 
 %% Load SACCSFA MTF results to compare.
-testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'Camera','ChromaticAberration');
 testFilename = 'MTF_SACCSFA.mat';
 data_SACCSFA = load(fullfile(testFiledir,testFilename));
@@ -71,8 +71,8 @@ nTargetChs = length(targetChOptions);
 % Make a loop here.
 for cc = 1:nTargetChs
     targetChTemp = targetChOptions{cc};
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         testFiledir = fullfile(testFiledir,'Camera','ChromaticAberration','Print',measureDate,targetChTemp);
     else
         error('Cannot find data file list!');

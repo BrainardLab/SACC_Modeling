@@ -29,8 +29,8 @@ else
     spatialFrequency = 18;
 end
 olderDate = 5;
-if (ispref('SpatioSpectralStimulator','SACCData'))
-    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),'TestImages');
+if (ispref('SpatioSpectralStimulator','SCMDData'))
+    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),'TestImages');
     % We set the test file name differently over the image type either
     % normla or high.
     switch imageType

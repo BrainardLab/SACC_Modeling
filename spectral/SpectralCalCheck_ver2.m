@@ -55,8 +55,8 @@ LOADIMAGETYPE = 'experiment';
 switch LOADIMAGETYPE
     % Load new image data.
     case 'new'
-        if (ispref('SpatioSpectralStimulator','SACCData'))
-            testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+        if (ispref('SpatioSpectralStimulator','SCMDData'))
+            testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
             testFilename = GetMostRecentFileName(fullfile(testFiledir,'CheckCalibration'),...
                 'testImageData');
             theData = load(testFilename);
@@ -78,8 +78,8 @@ switch LOADIMAGETYPE
         gaborContrastHighImageSet = 0.10;
         
         % Load the image file.
-        if (ispref('SpatioSpectralStimulator','SACCData'))
-            testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),'CheckCalibration');
+        if (ispref('SpatioSpectralStimulator','SCMDData'))
+            testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),'CheckCalibration');
             testFilename = GetMostRecentFileName(testFiledir,'testImageDataCheck_','olderDate',olderDate);
             theData = load(testFilename);
             switch (olderDate)
@@ -171,7 +171,7 @@ elseif (~MEASUREPRIMARY)
         targetScreenSpdMeasured = theData.screenCalObj.cal.P_device;
     else
         % Otherwise, load the measured primary file.
-        if (ispref('SpatioSpectralStimulator','SACCData'))
+        if (ispref('SpatioSpectralStimulator','SCMDData'))
             % Load different file name according to 'normal' set or 'high' test
             % image contrast sets. We set the primary contrast as 0.07 for
             % normal image, and 0.10 for high image.
@@ -191,7 +191,7 @@ elseif (~MEASUREPRIMARY)
             end
             
             % Load file.
-            testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),'TestImages','MeasurementData');
+            testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),'TestImages','MeasurementData');
             primaryFilename = GetMostRecentFileName(testFiledir,append(filenamePart),'olderdate',olderDate);
             load(primaryFilename);
             fprintf('Measurement file found, so skipping primary measurement! \n');
@@ -684,8 +684,8 @@ if (MEASURETARGETCONTRAST)
     
     % Save data with the name containing dayTimestr, so that we can
     % automatically load in the most recent output.
-    if (ispref('SpatioSpectralStimulator','SACCData'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
         dayTimestr = datestr(now,'yyyy-mm-dd_HH-MM-SS');
         testFilename = fullfile(testFiledir,'CheckCalibration',sprintf('testImageDataCheck_postExp_%s',dayTimestr));
         save(testFilename,'theData','targetScreenSpd','targetScreenSpdMeasured','screenCalObj', ...

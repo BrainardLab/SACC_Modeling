@@ -177,9 +177,9 @@ elseif (strcmp(ansMethodofAdjustment,'N'))
     METHODOFADJUSTMENT = false;
     
     % Load the contrast range if we skip the method of adjustment,
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
         % Load the file.
-        testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         testFiledir = fullfile(testFiledir,'ExpData');
         testFilenameContrast = GetMostRecentFileName(fullfile(testFiledir,subjectName,append(num2str(sineFreqCyclesPerDeg),'_cpd')),...
             sprintf('ContrastRange_%s_%d_cpd',subjectName,sineFreqCyclesPerDeg));
@@ -214,8 +214,8 @@ if (strcmp(ansMethodofAdjustment,'N'))
 end
 
 %% Load test image data.
-if (ispref('SpatioSpectralStimulator','SACCData'))
-    testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+if (ispref('SpatioSpectralStimulator','SCMDData'))
+    testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
     
     % We will load either normal test image set or high based on the above
     % prompt answer.
@@ -306,8 +306,8 @@ if (METHODOFADJUSTMENT)
         'higherLimThresholdEstLog',higherLimThresholdEstLog,'lowerLimThresholdEstLog',lowerLimThresholdEstLog);
     
     % Save the results.
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         testFiledir = fullfile(testFiledir,'ExpData');
         
         % Make folder with subject name if it does not exist.
@@ -661,8 +661,8 @@ describe.testFileNameImages = filenameImage;
 
 %% Save the results.
 if (SAVETHERESULTS)
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         testFiledir = fullfile(testFiledir,'ExpData');
         
         % Make folder with subject name if it does not exist.

@@ -221,8 +221,8 @@ screenPrimaryPrimaries = screenPrimaryChannelObject.screenPrimaryPrimaries;
 screenPrimarySettings = screenPrimaryChannelObject.screenPrimarySettings;
 screenPrimarySpd = screenPrimaryChannelObject.screenPrimarySpd;
 
-if (ispref('SpatioSpectralStimulator','SACCData'))
-    testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+if (ispref('SpatioSpectralStimulator','SCMDData'))
+    testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
     testFilename = fullfile(testFiledir,'CheckCalibration','testImageData');
     save(testFilename,'S','T_cones','screenCalObj','channelCalObjs','screenSettingsImage', ...
         'screenPrimaryPrimaries','screenPrimarySettings','screenPrimarySpd',...

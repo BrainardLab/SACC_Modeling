@@ -10,10 +10,10 @@
 clear; close all;
 
 %% Load data.
-if (ispref('SpatioSpectralStimulator','SACCData'))
+if (ispref('SpatioSpectralStimulator','SCMDData'))
     subjectName = 'Semin';
     SF = '18_cpd';
-    testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+    testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
     testFiledir = fullfile(testFiledir,subjectName,SF);
     fileList = dir(fullfile(testFiledir,sprintf('CS_%s_*',subjectName)));
 end

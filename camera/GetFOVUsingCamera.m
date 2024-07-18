@@ -28,7 +28,7 @@ CALCULATIONMETHOD = 'direct';
 % currentDir = cd;
 % 
 % % Get the directory where the images were at.
-% testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+% testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
 % testFiledir = fullfile(testFiledir, 'Camera', 'ImagesForCalculateFOV');
 % cd(testFiledir);
 % 

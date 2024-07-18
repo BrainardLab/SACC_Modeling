@@ -27,8 +27,8 @@ end
 %% Load all images here.
 nImages = length(exposureOptions);
 for ee = 1:nImages
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         testFiledir = fullfile(testFiledir,'Camera','ChromaticAberration','Exposure',measureDate);
         switch measureDate
             case '0714'
@@ -142,8 +142,8 @@ numFocusOptions = [1 2 3 4 5];
 nImages = length(focusOptions);
 measureDate = '0719';
 for ee = 1:nImages
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         testFiledir = fullfile(testFiledir,'Camera','ChromaticAberration','Focus',measureDate);
         testFilename = GetMostRecentFileName(testFiledir,...
             append(num2str(targetCyclePerDeg),'cpd_focus_',focusOptions{ee}));

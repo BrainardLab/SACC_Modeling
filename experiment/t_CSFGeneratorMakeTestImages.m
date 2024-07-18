@@ -113,8 +113,8 @@ for ss = 1:numel(sineFreqCyclesPerDegTarget)
     
     % Save the images and params.  These are saved out separately for each
     % spatial frequency.
-    if (ispref('SpatioSpectralStimulator','SACCData'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
         dayTimestr = datestr(now,'yyyy-mm-dd_HH-MM-SS');
         testFilename = fullfile(testFiledir,'TestImages',sprintf('RunExpData_%d_cpd_%s.mat',...
             sineFreqCyclesPerDeg,dayTimestr));
@@ -133,9 +133,9 @@ end
 STOREMEASUREMENT = true;
 
 if (STOREMEASUREMENT)
-    if (ispref('SpatioSpectralStimulator','SACCData'))
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
         % Load the measurement file name.
-        testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
         testFilename = fullfile(testFiledir,'TestImages','MeasurementData','targetScreenSpdMeasured.mat');
         load(testFilename);
         

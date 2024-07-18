@@ -13,7 +13,7 @@
 clear; close all;
 
 %% Read out the experimental log table.
-testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'Experiment','ExperimentalLog');
 testFilename = 'SACC_Experimental_Log.xlsx';
 testFileToRead = fullfile(testFiledir,testFilename);

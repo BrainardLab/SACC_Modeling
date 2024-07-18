@@ -109,7 +109,7 @@ for ss = 1:nSFs
         SF = append(num2str(cyclesPerDeg),'cpd');
         
         % Set the directory to save the image.
-        saveImageDir = getpref('SpatioSpectralStimulator','SACCMaterials');
+        saveImageDir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         saveImageDir = fullfile(saveImageDir,'Camera','ChromaticAberration',append(viewingMedia,trombonePosition),date,channel);
         
         % Capture an image here and do analysis of it.
@@ -214,7 +214,7 @@ for cc = 1:nChannels
     SF = append(num2str(cyclesPerDeg),'cpd');
     
     % Set the directory to save the image.
-    saveImageDir = getpref('SpatioSpectralStimulator','SACCMaterials');
+    saveImageDir = getpref('SpatioSpectralStimulator','SCMDMaterials');
     saveImageDir = fullfile(saveImageDir,'Camera','ChromaticAberration',viewingMedia,date,channel);
     
     % Capture an image here and do analysis of it.

@@ -16,8 +16,8 @@ targetCyclePerDeg = {3,6,9,12,18};
 measureDate = '0814';
 
 %% Load all images here.
-if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-    testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+    testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
     testFiledir = fullfile(testFiledir,'Camera','PrintedImageContrast',measureDate);
 else
     error('Cannot find data file list!');

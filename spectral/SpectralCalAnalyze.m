@@ -21,8 +21,8 @@ SAVETHEPLOT = true;
 %
 % You can do fit all at once or only single data.
 if (FITALLATONCE)
-    if (ispref('SpatioSpectralStimulator','SACCData'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
         testFilenames = dir(fullfile(testFiledir,'CheckCalibration','testImageDataCheck_*'));
     end
     nFits = length(testFilenames);
@@ -33,9 +33,9 @@ end
 % Start a loop here to fit all at once if you want.
 for ff = 1:nFits
     %% Load output of SpectralCalCheck
-    if (ispref('SpatioSpectralStimulator','SACCData'))
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
         olderDate = ff-1;
-        testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
         testFilename = GetMostRecentFileName(fullfile(testFiledir,'CheckCalibration'),...
             'testImageDataCheck_','olderDate',olderDate);
         theCheckData = load(testFilename);
@@ -136,8 +136,8 @@ for ff = 1:nFits
         % after next round of measurement.
         conditionName = 'LminusMSmooth';
         olderDate = 0;
-        if (ispref('SpatioSpectralStimulator','SACCData'))
-            testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+        if (ispref('SpatioSpectralStimulator','SCMDData'))
+            testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
             testFilename = GetMostRecentFileName(fullfile(testFiledir,'CheckCalibration'),...
                 'testImageData_','olderDate',olderDate);
             theComputeData = load(testFilename);

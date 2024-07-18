@@ -90,7 +90,7 @@ SAVEFIGURES = false;
 savefileDir = '~/Desktop';
 
 %% Get the peak wavelength of the Combi-LED (camera).
-testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'camera','ChromaticAberration','Spectra');
 % testFilename = 'CombiLED_Spectra.mat';
 testFilename = 'CombiLED_Spectra_fancy_paper.mat';
@@ -122,7 +122,7 @@ contrasts_camera_PR670 = (XYZ_camera_white(:,2) - XYZ_camera_black(:,2))./(XYZ_c
 %
 % Load the calibration data. We will load the most recent calibration
 % results.
-testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'Calibration');
 testFilename = 'SACCPrimary1.mat';
 calData = load(fullfile(testFiledir,testFilename));
@@ -139,7 +139,7 @@ peaks_spd_SACCSFA = FindPeakSpds(spd_SACCSFA,'verbose',false);
 viewingMedia = 'Print';
 
 % Load all images here.
-testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'camera','ChromaticAberration',viewingMedia);
 folders = dir(testFiledir);
 dates = cell(1, numel(folders));
@@ -468,7 +468,7 @@ contrastsFit_camera = (contrastsFit_camera_25 + contrastsFit_camera_50 + contras
 viewingMedia = viewingMediaSACCSFA;
 
 % Load all images here.
-testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'camera','ChromaticAberration',viewingMedia);
 folders = dir(testFiledir);
 dates = cell(1, numel(folders));

@@ -62,7 +62,7 @@ FITPFONLYGOODTESTCONTRASTS = true;
 
 % Set directory to differently.
 if (FITPFONLYGOODTESTCONTRASTS)
-    whichPref = 'SACCAnalysisFinal';
+    whichPref = 'SCMDAnalysis';
 else
     whichPref = 'SACCAnalysis';
 end

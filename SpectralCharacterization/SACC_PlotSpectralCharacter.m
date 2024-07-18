@@ -9,8 +9,8 @@
 clear; close all;
 
 %% Read out the data.
-if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-    testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+    testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
     testFiledir = fullfile(testFiledir,'Calibration');
     testFilename = 'SACCPrimary1.mat';
     data = load(fullfile(testFiledir,testFilename));

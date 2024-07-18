@@ -149,8 +149,8 @@ end
 
 %% Collect all data and save it.
 if (SAVETHERESULTS)
-    if (ispref('SpatioSpectralStimulator','SACCData'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
         dayTimestr = datestr(now,'yyyy-mm-dd_HH-MM-SS');
         
         % Set the file name and save.

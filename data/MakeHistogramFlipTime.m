@@ -10,7 +10,7 @@
 clear; close all;
 
 %% Load the flip time data.
-fileDir = '/Users/seminoh/Aguirre-Brainard Lab Dropbox/Semin Oh/SACC_materials/CheckScreenFlipTime';
+fileDir = '/Users/seminoh/Aguirre-Brainard Lab Dropbox/Fangfang Hong/SCMD_materials/CheckScreenFlipTime';
 fileName = '0817_FlipTime_EarlyFrame_0.5.mat';
 load(fullfile(fileDir,fileName));
 

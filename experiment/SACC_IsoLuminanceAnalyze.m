@@ -18,8 +18,8 @@ clear; close all;
 SAVETHEPLOT = true;
 
 %% Load the data.
-if (ispref('SpatioSpectralStimulator','SACCData'))
-    testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+if (ispref('SpatioSpectralStimulator','SCMDData'))
+    testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
     testFileList = dir(testFiledir);
     
     % Find available subject name.

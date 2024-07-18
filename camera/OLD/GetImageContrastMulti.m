@@ -12,7 +12,7 @@ clear; close all;
 %% Load image.
 %
 % Direct to the folder.
-fileDir = '~/Aguirre-Brainard Lab Dropbox/Semin Oh/SACC_materials/Camera/091622_Check_Chromatic_Abberration';
+fileDir = '~/Aguirre-Brainard Lab Dropbox/Fangfang Hong/SCMD_materials/Camera/091622_Check_Chromatic_Abberration';
 cd(fileDir);
 
 % Load image here.

@@ -26,8 +26,8 @@ end
 %% Load all images here.
 nImages = length(exposureOptions);
 for ee = 1:nImages
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         testFiledir = fullfile(testFiledir,'Camera','ChromaticAberration','Exposure',measureDate);
         switch measureDate
             case '0714'

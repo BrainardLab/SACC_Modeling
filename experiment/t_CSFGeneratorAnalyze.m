@@ -71,9 +71,9 @@ FITPFONLYGOODTESTCONTRASTS = true;
 % Set the directory to save the results differently so that we don't
 % overlap the data. Original results are saved in the directory
 % 'SACCAnalysis', and we are saving the updated results with bad points
-% omitted in 'SACCAnalysisFinal'.
+% omitted in 'SCMDAnalysis'.
 if (FITPFONLYGOODTESTCONTRASTS)
-    whichPref = 'SACCAnalysisFinal';
+    whichPref = 'SCMDAnalysis';
 else
     whichPref = 'SACCAnalysis';
 end
@@ -136,8 +136,8 @@ thresholdCriterion = 0.81606;
 % You can either fit all available data at once or choose one subject's
 % data to fit.
 if (FITALLATONCE)
-    if (ispref('SpatioSpectralStimulator','SACCData'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCData');
+    if (ispref('SpatioSpectralStimulator','SCMDData'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDData');
         testFileList = dir(testFiledir);
         
         % Find available data of subject and spatial frequency.
@@ -331,8 +331,8 @@ for ss = 1:nSubjects
             whichFilter = filterOptions{ff};
             
             % Load the experiment data.
-            if (ispref('SpatioSpectralStimulator','SACCData'))
-                testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),...
+            if (ispref('SpatioSpectralStimulator','SCMDData'))
+                testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),...
                     subjectName,append(num2str(sineFreqCyclesPerDegTemp),'_cpd'));
                 testFilename = GetMostRecentFileName(testFiledir,...
                     sprintf('CS_%s_%d_cpd_%s',subjectName,sineFreqCyclesPerDegTemp,whichFilter),'olderDate',olderDate);
@@ -613,8 +613,8 @@ for ss = 1:nSubjects
                 whichFilter = filterOptions{ff};
                 
                 % Load the experiment data.
-                if (ispref('SpatioSpectralStimulator','SACCData'))
-                    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),...
+                if (ispref('SpatioSpectralStimulator','SCMDData'))
+                    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),...
                         subjectName,append(num2str(sineFreqCyclesPerDegTemp),'_cpd'));
                     testFilename = GetMostRecentFileName(testFiledir,...
                         sprintf('CS_%s_%d_cpd_%s',subjectName,sineFreqCyclesPerDegTemp,whichFilter),'olderDate',olderDate);
@@ -824,8 +824,8 @@ for ss = 1:nSubjects
         
         % Get target primary contrast. We will read it from the test image file
         % we used.
-        if (ispref('SpatioSpectralStimulator','SACCData'))
-            testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),'TestImages');
+        if (ispref('SpatioSpectralStimulator','SCMDData'))
+            testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),'TestImages');
             testFilenameImage = theData.describe.testFileNameImages;
             fileFormat = '.mat';
             theImageData = load(fullfile(testFiledir,append(testFilenameImage,fileFormat)));

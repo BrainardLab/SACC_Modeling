@@ -28,8 +28,8 @@ for dd = 1:length(projectorSettings)
     projectorSettingTemp = projectorSettings{dd};
     
     % Get channel name from the existing folders.
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-        testFiledir = getpref('SpatioSpectralStimulator','SACCMaterials');
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+        testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
         if dd == 3
             testFiledir = fullfile(testFiledir,'Camera','ChromaticAberration','OLD',measureDate,projectorSettingTemp,'Focus Separately');
         else

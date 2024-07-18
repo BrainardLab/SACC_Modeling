@@ -49,8 +49,8 @@ end
 %% Save the results.
 SAVERESULTS = true;
 if (SAVERESULTS)
-    if (ispref('SpatioSpectralStimulator','SACCMaterials'))
-        testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCMaterials'),'CheckSpectralReproducibility');
+    if (ispref('SpatioSpectralStimulator','SCMDMaterials'))
+        testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDMaterials'),'CheckSpectralReproducibility');
         dayTimestr = datestr(now,'yyyy-mm-dd_HH-MM-SS');
         testFilenameMeasure = sprintf('%s_%s',testFilename,dayTimestr);
         save(testFilenameMeasure,'spd');
@@ -101,7 +101,7 @@ text(0.15, 0.75, sprintf('Max scale factor  = (%.2f)',maxScaleFactor), 'Parent',
 % Save the plot.
 SAVETHEPLOT = true;
 if (SAVETHEPLOT)
-    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCMaterials'),'CheckSpectralReproducibility');
+    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDMaterials'),'CheckSpectralReproducibility');
     testFilenamePlot = fullfile(testFiledir, testFilename);
     testFileFormat = '.tiff';
     saveas(gcf,append(testFilenamePlot,testFileFormat));
@@ -128,7 +128,7 @@ text(0.15, 0.75, sprintf('Max scale factor  = (%.2f)',maxScaleFactor), 'Parent',
 
 % Save the scaled results plot.
 if (SAVETHEPLOT)
-    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCMaterials'),'CheckSpectralReproducibility');
+    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDMaterials'),'CheckSpectralReproducibility');
     testFilenamePlot = fullfile(testFiledir, testFilename);
     testFileFormat = '.tiff';
     saveas(gcf,append(testFilenamePlot,'_scaled',testFileFormat));

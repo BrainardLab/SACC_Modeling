@@ -48,8 +48,8 @@ xlsFilename = fullfile(LEDSpectraDir,append(XLSOutFileName,'_',LEDMeasDateStr,'.
 %% (TEMP) Read out the spectrum to test. - (SEMIN, 6/2/23)
 %
 % Load the target spectrum.
-if (ispref('SpatioSpectralStimulator','SACCData'))
-    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SACCData'),'CheckCalibration');
+if (ispref('SpatioSpectralStimulator','SCMDData'))
+    testFiledir = fullfile(getpref('SpatioSpectralStimulator','SCMDData'),'CheckCalibration');
     testFilename = GetMostRecentFileName(testFiledir,'testImageDataCheck');
     data = load(testFilename);
     spds = data.ptCldScreenSpdMeasuredCheckCal;
