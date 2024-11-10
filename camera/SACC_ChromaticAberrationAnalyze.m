@@ -90,7 +90,7 @@ SAVEFIGURES = false;
 savefileDir = '~/Desktop';
 
 %% Get the peak wavelength of the Combi-LED (camera).
-testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
+testFiledir = getpref('SACC_Modeling','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'camera','ChromaticAberration','Spectra');
 % testFilename = 'CombiLED_Spectra.mat';
 testFilename = 'CombiLED_Spectra_fancy_paper.mat';
@@ -122,7 +122,7 @@ contrasts_camera_PR670 = (XYZ_camera_white(:,2) - XYZ_camera_black(:,2))./(XYZ_c
 %
 % Load the calibration data. We will load the most recent calibration
 % results.
-testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
+testFiledir = getpref('SACC_Modeling','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'Calibration');
 testFilename = 'SACCPrimary1.mat';
 calData = load(fullfile(testFiledir,testFilename));
@@ -139,7 +139,7 @@ peaks_spd_SACCSFA = FindPeakSpds(spd_SACCSFA,'verbose',false);
 viewingMedia = 'Print';
 
 % Load all images here.
-testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
+testFiledir = getpref('SACC_Modeling','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'camera','ChromaticAberration',viewingMedia);
 folders = dir(testFiledir);
 dates = cell(1, numel(folders));
@@ -468,7 +468,7 @@ contrastsFit_camera = (contrastsFit_camera_25 + contrastsFit_camera_50 + contras
 viewingMedia = viewingMediaSACCSFA;
 
 % Load all images here.
-testFiledir = getpref('SpatioSpectralStimulator','SCMDMaterials');
+testFiledir = getpref('SACC_Modeling','SCMDMaterials');
 testFiledir = fullfile(testFiledir,'camera','ChromaticAberration',viewingMedia);
 folders = dir(testFiledir);
 dates = cell(1, numel(folders));
@@ -1233,9 +1233,12 @@ if (SAVEFIGURES)
     saveas(gcf,fullfile(savefileDir,'SACCSFA_MTF_Interpolation.tiff'));
 end
 
-% Check how well we did the interpolation. Here we plot the measured camera
+%% Check how well we did the interpolation. Here we plot the measured camera
 % MTF and the interpolated results together. For the measured camera MTF,
 % it's the compensated results, which were used to interpolate it.
+nSmoothPoints = 100;
+
+
 figure; hold on;
 figureSize = [0 0 1200 500];
 set(gcf,'position',figureSize);
@@ -1251,7 +1254,6 @@ for cc = 1:nChannels_test
         'ko-','markeredgecolor','k','markerfacecolor','r', 'markersize',10);
     
     % SACCSFA MTF - interpolated.
-    nSmoothPoints = 100;
     SF_smooth = linspace(0,max(cell2mat(targetCyclePerDeg)),nSmoothPoints);
     peakSpd_smooth = ones(length(SF_smooth),1).*peakSpdTemp;
     
