@@ -1201,7 +1201,7 @@ set(gcf,'position',figureSize);
 l_raw = scatter3(x(:), y(:), z(:), 'ko','sizedata',20,'markerfacecolor','r');
 hold on;
 
-% Fitted surface.
+%Fitted surface.
 nPointsMeshGrid = 100;
 FittedSurfacePlotType = 2;
 switch FittedSurfacePlotType
@@ -1232,6 +1232,28 @@ legend([l_raw l_fit], 'Raw Data','Fitted Surface');
 if (SAVEFIGURES)
     saveas(gcf,fullfile(savefileDir,'SACCSFA_MTF_Interpolation.tiff'));
 end
+
+%% fit a surface with higher polynomial order
+fitOpts = fitoptions('Method', 'LinearLeastSquares', 'Normalize', 'on');
+polyFit = fit([x(:), y(:)], z(:), 'poly22', fitOpts);
+x_interp = linspace(380, 780, 201);
+y_interp = y(1,:);
+[Y_interp, X_interp] = meshgrid(y_interp, x_interp);
+Z_interp = feval(polyFit, X_interp, Y_interp);
+
+figure;
+surf(X_interp, Y_interp, Z_interp,'FaceAlpha', 0.8, 'EdgeColor', 'none'); hold on;
+scatter3(x(:), y(:), z(:), 'red', 'filled')
+xlim([min(x_interp), max(x_interp)]);
+zlim([0,1]);
+
+% Combine the vectors into a single table with headers
+data_table = table(X_interp(:), Y_interp(:), Z_interp(:), ...
+                   'VariableNames', {'wavelength', 'spatial_frequency', 'interpolated_MTF'});
+
+% Write the table to a CSV file
+writetable(data_table, fullfile(testFiledir, 'Interpolated_MTF.csv'));
+
 
 %% Check how well we did the interpolation. Here we plot the measured camera
 % MTF and the interpolated results together. For the measured camera MTF,
